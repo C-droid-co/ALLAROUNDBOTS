@@ -57,7 +57,7 @@ async def pmpermit_func(_, message):
         flood[str(user_id)] += 1
     else:
         flood[str(user_id)] = 1
-    if flood[str(user_id)] > 5:
+    if flood[str(user_id)] > 10:
         await message.reply_text("SPAM DETECTED, BLOCKED USER AUTOMATICALLY!")
         return await app2.block_user(user_id)
     results = await app2.get_inline_bot_results(BOT_ID, f"pmpermit {user_id}")
@@ -69,7 +69,7 @@ async def pmpermit_func(_, message):
 
 
 @app2.on_message(
-    filters.command("approve", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
+    filters.command("a", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
 )
 @capture_err
 async def pm_approve(_, message):
@@ -83,7 +83,7 @@ async def pm_approve(_, message):
 
 
 @app2.on_message(
-    filters.command("disapprove", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
+    filters.command("da", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
 )
 async def pm_disapprove(_, message):
     if not message.reply_to_message:
@@ -103,7 +103,7 @@ async def pm_disapprove(_, message):
 
 
 @app2.on_message(
-    filters.command("block", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
+    filters.command("b", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
 )
 @capture_err
 async def block_user_func(_, message):
@@ -116,7 +116,7 @@ async def block_user_func(_, message):
 
 
 @app2.on_message(
-    filters.command("unblock", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
+    filters.command("ub", prefixes=USERBOT_PREFIX) & SUDOERS & ~filters.via_bot
 )
 async def unblock_user_func(_, message):
     if not message.reply_to_message:
@@ -138,7 +138,7 @@ async def pmpermit_cq(_, cq):
         cq.data.split(None, 2)[1],
         cq.data.split(None, 2)[2],
     )
-    if data == "approve":
+    if data == "a":
         if user_id != USERBOT_ID:
             return await cq.answer("This Button Is Not For You")
         await approve_pmpermit(int(victim))
@@ -146,7 +146,7 @@ async def pmpermit_cq(_, cq):
             cq.inline_message_id, "User Has Been Approved To PM."
         )
 
-    if data == "block":
+    if data == "b":
         if user_id != USERBOT_ID:
             return await cq.answer("This Button Is Not For You")
         await cq.answer()
