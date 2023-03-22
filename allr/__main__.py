@@ -44,11 +44,11 @@ async def start_bot():
     bot_modules = ""
     j = 1
     for i in ALL_MODULES:
-        if j == 4:
-            bot_modules += "|{:<12}|\n".format(i)
+        if j == 6:
+            bot_modules += "|{:<10}|\n".format(i)
             j = 0
         else:
-            bot_modules += "|{:<12}".format(i)
+            bot_modules += "|{:<10}".format(i)
         j += 1
     print("+/////////////////////////////////////////////////////////////+")
     print("<                              ALLR                              >")
@@ -92,7 +92,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             
         ],
         [
-            InlineKeyboardButton(text="CHANNEL", url= "https://t.me/cleaneroobot" ),
+            InlineKeyboardButton(text="CHANNEL", url= LINKGROUP ),
         ],
         [
             InlineKeyboardButton(
