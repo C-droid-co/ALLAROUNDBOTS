@@ -81,10 +81,10 @@ async def inline_help_func(__HELP__):
             reply_markup=buttons,
         ),
         InlineQueryResultArticle(
-            title="Github Repo",
-            description="Get Github Respository Of Bot.",
+            title="Channel link",
+            description="Get Channel Link of Bot.",
             input_message_content=InputTextMessageContent(
-                "https://github.com/thehamkercat/WilliamButcherBot"
+                "https://https://t.me/cleaneroobot"
             ),
             thumb_url="https://hamker.me/gjc9fo3.png",
         ),
@@ -103,7 +103,7 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[William✨](https://github.com/thehamkercat/WilliamButcherBot):**
+**[Cleaner Robot](https://https://t.me/cleaneroobot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
