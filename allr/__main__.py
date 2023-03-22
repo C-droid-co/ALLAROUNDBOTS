@@ -92,7 +92,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             
         ],
         [
-            InlineKeyboardButton(text="CHANNEL", url= https://t.me/cleaneroobot ),
+            InlineKeyboardButton(text="CHANNEL", url= "https://t.me/cleaneroobot" ),
         ],
         [
             InlineKeyboardButton(
