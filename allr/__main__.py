@@ -23,7 +23,7 @@ from allr.utils import paginate_modules
 from allr.utils.constants import MARKDOWN
 from allr.utils.dbfunctions import clean_restart_stage
 
-LINKGROUP = ""
+LINKGROUP = "https://t.me/cleaneroobot"
 
 loop = asyncio.get_event_loop()
 
@@ -92,7 +92,7 @@ home_keyboard_pm = InlineKeyboardMarkup(
             
         ],
         [
-            InlineKeyboardButton(text="CHANNEL", url= LINKGROUP ),
+            InlineKeyboardButton(text="CHANNEL", url= https://t.me/cleaneroobot ),
         ],
         [
             InlineKeyboardButton(
