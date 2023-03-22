@@ -75,7 +75,7 @@ log = Log(True, "bot.log")
 # MongoDB client
 log.info("Initializing MongoDB client")
 mongo_client = MongoClient(MONGO_URL)
-db = mongo_client.wbb
+db = mongo_client.allr
 
 
 async def load_sudoers():
@@ -117,7 +117,7 @@ aiohttpsession = ClientSession()
 
 arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 
-app = Client("wbb", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
+app = Client("allr", bot_token=BOT_TOKEN, api_id=API_ID, api_hash=API_HASH)
 
 log.info("Starting bot client")
 app.start()
