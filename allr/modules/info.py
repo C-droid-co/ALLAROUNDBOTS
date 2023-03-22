@@ -3,9 +3,9 @@ import os
 from pyrogram import filters
 from pyrogram.types import Message
 
-from wbb import SUDOERS, app
-from wbb.core.sections import section
-from wbb.utils.dbfunctions import is_gbanned_user, user_global_karma
+from allr import SUDOERS, app
+from allr.core.sections import section
+from allr.utils.dbfunctions import is_gbanned_user, user_global_karma
 
 __MODULE__ = "Info"
 __HELP__ = """
